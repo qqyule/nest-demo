@@ -12,22 +12,22 @@ export class User {
   @PrimaryGeneratedColumn({ comment: '主键id' })
   id: number;
 
-  @Column({ type: 'varchar' })
+  @Column({ type: 'varchar', unique: true })
   email: string;
 
   @Column()
   password: string;
 
-  @Column()
+  @Column({ nullable: true })
   avatar: string;
 
   @Column()
   nickname: string;
 
-  @Column()
+  @Column({ nullable: true })
   phoneAreaCode: string;
 
-  @Column()
+  @Column({ nullable: true })
   phoneNumber: string;
 
   @CreateDateColumn({ name: 'created_at', type: 'timestamp' })
